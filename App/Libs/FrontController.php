@@ -1,6 +1,6 @@
 <?php
 
-namespace App\lib;
+namespace App\Libs;
 
 class FrontController
 {
@@ -32,7 +32,7 @@ class FrontController
     }
 
     public function dispatch() {
-        $controllerClassName = 'App\controllers\\' . ucfirst($this->_controller) . 'Controller';
+        $controllerClassName = 'App\Controllers\\' . ucfirst($this->_controller) . 'Controller';
         $actionName = $this->_action . 'Action';
 
         if(!class_exists($controllerClassName)) {

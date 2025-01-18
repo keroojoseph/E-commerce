@@ -1,14 +1,15 @@
 <?php
 
-namespace App\controllers;
+namespace App\Controllers;
 
-use App\lib\FrontController;
+use App\Libs\FrontController;
 
 abstract class AbstractController
 {
     protected $_controller;
     protected $_action;
     protected $_params;
+    protected $_data = array();
 
     public function notFoundAction() {
         $this->view();
@@ -45,6 +46,7 @@ abstract class AbstractController
             $view = VIEW_PATH . $this->_controller . DS . $this->_action . '.view.php';
 
             if(file_exists($view)) {
+                extract($this->_data);
                 require_once $view;
             } else {
                 require_once VIEW_PATH . 'notfound' . DS . 'noview.view.php';
