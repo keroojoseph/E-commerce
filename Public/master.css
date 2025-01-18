@@ -1,0 +1,117 @@
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --second-color: #f4f4f4;
+    --main-color: #2c3e50;
+    --control: #e67e22;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 60px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-button {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    color: var(--control);
+    padding: 10px 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+    text-align: center;
+    margin-top: -9px;
+}
+
+.toggle-button i {
+    font-size: 28px;
+}
+
+
+aside {
+    position: fixed;
+    top: 48px;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    color: #fff;
+    padding: 20px;
+    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); */
+    transition: left 0.3s ease;
+}
+
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin: 15px 0;
+    border-bottom:1px solid #ffffff;
+}
+
+aside ul li a {
+    color: #2c3e50;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.manger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    height: 30%;
+}
+
+.manger img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid var(--main-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.manger div {
+    padding: 20px 0;
+    text-transform: capitalize;
+    line-height: 1.3;
+}
+
+.toggle-checkbox:checked ~ aside {
+    left: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.toggle-checkbox:checked ~ main {
+    margin-left: 250px;
+}
+
+.toggle-checkbox:checked + .toggle-button i::before {
+    content: "\f00d";
+}

@@ -2,40 +2,11 @@
 <head>
     <title>Form Customer</title>
     <style type="text/css">
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            display: flex;
-            width: 100%;
-            height: 60px;
-            padding: 0 200px;
-            background-color: #4040a5;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 2em;
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 200px;
-            align-items: center;
-            min-height: calc(100vh - 60px);
-        }
 
         form {
             display: flex;
             flex-direction: column;
-            width: 30%;
+            width: 500px;
             /*align-items: center;*/
         }
 
@@ -58,7 +29,7 @@
         p.message {
             background-color: #4040a5;
             padding: 10px ;
-            width: 100%;
+            width: 500px;
             text-align: center;
             border-radius: 4px;
             margin-bottom: 10px;
@@ -67,42 +38,6 @@
 
         p.message.error {
             background-color: red;
-        }
-
-        table {
-            width: 67%;
-            border-collapse: collapse;
-            font-size: .8em;
-            text-align: left;
-        }
-
-        /* Header Row */
-        table thead tr {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        table thead tr td {
-            border: solid 1px #a6a4a4;
-            padding: 10px;
-        }
-
-        /* Table Data Rows */
-        table tbody tr:nth-child(odd) {
-            background-color: lightgray;
-        }
-
-        table tbody tr:nth-child(even) {
-            background-color: #fff;
-        }
-
-        table tbody td {
-            border: solid 1px #a6a4a4;
-            padding: 8px;
-        }
-
-        table tbody td a {
-            padding: 5px;
         }
 
     </style>

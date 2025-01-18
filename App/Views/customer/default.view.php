@@ -1,68 +1,14 @@
 <html>
 <head>
     <style type="text/css">
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            display: flex;
-            width: 100%;
-            height: 60px;
-            padding: 0 200px;
-            background-color: #4040a5;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 2em;
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            justify-content: flex-start;
-            flex-direction: column;
-            padding: 20px 200px;
-            align-items: center;
-            min-height: calc(100vh - 60px);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 30%;
-            /*align-items: center;*/
-        }
-
-        form input {
-            padding: 10px;
-            margin-top: 5px;
-            width: 100%;
-            border-radius: 5px;
-            outline: none;
-        }
-
-        form input[type="submit"] {
-            width: 100px;
-        }
-
-        form label {
-            font-size: 1.8em;
-        }
-
         p.message {
             background-color: #4040a5;
             padding: 10px ;
-            width: 67%;
             text-align: center;
             border-radius: 4px;
             margin-bottom: 10px;
             color: white;
+            width: 1000px;
         }
 
         p.message.error {
@@ -70,11 +16,10 @@
         }
 
         table {
-            width: 67%;
+            width: 1000px;
             border-collapse: collapse;
             font-size: .8em;
             text-align: left;
-            margin-top: 40px;
         }
 
         /* Header Row */
