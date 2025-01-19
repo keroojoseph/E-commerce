@@ -10,6 +10,8 @@ abstract class AbstractController
     protected $_action;
     protected $_params;
     protected $_data = array();
+    protected $_template;
+    protected $_language;
 
     public function notFoundAction() {
         $this->view();
@@ -46,20 +48,30 @@ abstract class AbstractController
             $view = VIEW_PATH . $this->_controller . DS . $this->_action . '.view.php';
 
             if(file_exists($view)) {
-                extract($this->_data);
-                require_once TEMPLATE_PATH . 'templateHeaderStart.php';
-                require_once TEMPLATE_PATH . 'templateHeaderEnd.php';
-                require_once TEMPLATE_PATH . 'header.php';
-                require_once TEMPLATE_PATH . 'nav.php';
-                require_once TEMPLATE_PATH . 'wrapperStart.php';
-                require_once $view;
-                require_once TEMPLATE_PATH . 'wrapperEnd.php';
-                require_once TEMPLATE_PATH . 'footer.php';
-                require_once $view;
+                $this->_data = array_merge($this->_data, $this->_language->getDictionary());
+                $this->_template->setActionViewFile($view);
+                $this->_template->setData($this->_data);
+                $this->_template->renderApp();
             } else {
                 require_once VIEW_PATH . 'notfound' . DS . 'noview.view.php';
             }
         }
+    }
+
+    /**
+     * @param mixed $template
+     */
+    public function setTemplate($template)
+    {
+        $this->_template = $template;
+    }
+
+    /**
+     * @param mixed $language
+     */
+    public function setLanguage($language)
+    {
+        $this->_language = $language;
     }
 
 

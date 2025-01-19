@@ -14,12 +14,15 @@ class CustomerController extends AbstractController
 
     public function defaultAction()
     {
+        $this->_language->load('customer.default');
+        $this->_language->load('template.comman');
        $this->_data['customers'] = CustomerModel::getAll();
         $this->view();
     }
 
     public function addAction()
     {
+        $this->_language->load('template.comman');
         if(isset($_POST['submit'])) {
             $customer = $this->getModel();
             if($customer->save()) {
@@ -32,6 +35,7 @@ class CustomerController extends AbstractController
 
     public function editAction()
     {
+        $this->_language->load('template.comman');
         $id = filter_var($this->_params[0], FILTER_SANITIZE_NUMBER_INT);
         $customer = CustomerModel::getByPK($id);
 
@@ -69,6 +73,7 @@ class CustomerController extends AbstractController
 
     public function deleteAction()
     {
+        $this->_language->load('template.comman');
         $customer = new CustomerModel();
         $customer->customerId = filter_var($this->_params[0], FILTER_SANITIZE_NUMBER_INT);
         $this->view();

@@ -43,7 +43,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-<div class="container">
     <form method="POST" enctype="application/x-www-form-urlencoded">
         <?php if (isset($_SESSION['message'])) { ?>
             <p class="message" <?= isset($error) ? 'error' : '' ?>><?= htmlspecialchars($_SESSION['message']) ?></p>
@@ -57,6 +56,5 @@
         <input type="text" name="zipCode" placeholder="Write zip code" value="<?= isset($user) ? $user->zipCode : '' ?>">
         <input type="submit" name="submit" value="Save">
     </form>
-</div>
 </body>
 </html>
